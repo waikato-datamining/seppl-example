@@ -1,5 +1,7 @@
 import argparse
-from seppl import Plugin
+from typing import List
+
+from seppl import Plugin, AliasSupporter
 
 
 class SomePlugin(Plugin):
@@ -37,3 +39,14 @@ class Dud(Plugin):
     def description(self) -> str:
         return "Dummy plugin."
 
+
+class PluginWithAlias(Plugin, AliasSupporter):
+
+    def name(self) -> str:
+        return "really-long-winded-name"
+
+    def aliases(self) -> List[str]:
+        return ["rlwn"]
+
+    def description(self) -> str:
+        return "Plugin with a long default name and a short alias."
