@@ -17,7 +17,7 @@ setup(
     },
     packages=find_namespace_packages(where='src'),
     install_requires=[
-        "seppl",
+        "seppl>=0.2.9",
     ],
     version="0.0.1",
     author='Peter Reutemann',
